@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.row{
+  width: 600px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.element{
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.element:hover{
+  background-color: #fa949d;
+
+}

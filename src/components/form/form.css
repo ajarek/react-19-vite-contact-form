@@ -1,0 +1,12 @@
+.form{
+    width: 600px;
+    height: 500px;
+    background-color:#f9f9fb ;
+    color: #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+}
