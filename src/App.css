@@ -9,7 +9,9 @@
   width: 600px;
   display: flex;
   justify-content: space-evenly;
+    margin-bottom: 1rem;
 }
+
 .element{
   padding: 0.3rem 1rem;
   border-radius: 8px;
