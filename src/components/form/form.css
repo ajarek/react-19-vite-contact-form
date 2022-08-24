@@ -30,6 +30,7 @@ h1{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.input-wrapper p{
-    color: red;
+.choice{
+    color:#fa949d ;
+    border: 1px solid #fa949d;
 }
