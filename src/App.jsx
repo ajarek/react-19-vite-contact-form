@@ -1,7 +1,5 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
-import Form from "./components/form/Form"
+import Form from "./components/form/Form";
 
 function App() {
   return (
@@ -22,7 +20,7 @@ function App() {
           <p>ajarek@poczta.onet.pl</p>
         </div>
       </div>
-     <Form/>
+      <Form />
     </div>
   );
 }

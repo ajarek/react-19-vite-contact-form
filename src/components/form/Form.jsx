@@ -8,22 +8,22 @@ import { Alert } from "../../components/alert/Alert"
 export class Form extends React.Component {
   state = {
     validateName: "",
-    validateEmail:"",
-    validatePhone:"",
-    validateTextarea:"",
+    validateEmail: "",
+    validatePhone: "",
+    validateTextarea: "",
     inputValueName: "",
     inputValueEmail: "",
     inputValuePhone: "",
-    inputValueTextarea:"",
-    validationChecked:[],
-    buttonLabel:'',
-  };
+    inputValueTextarea: "",
+    validationChecked: [],
+    buttonLabel: "",
+  }
   InputName = (e) => {
-    this.setState({ inputValueName: e.target.value });
+    this.setState({ inputValueName: e.target.value })
     setTimeout(() => {
       if (this.state.inputValueName.match(/^([A-Z][a-z]{2,})$/)) {
         this.setState({ validateName: "Valid" })
-        this.state.validationChecked.push('true')
+        this.state.validationChecked.push("true")
       } else {
         this.setState({
           validateName:
@@ -41,7 +41,7 @@ export class Form extends React.Component {
         )
       ) {
         this.setState({ validateEmail: "Valid" })
-        this.state.validationChecked.push('true')
+        this.state.validationChecked.push("true")
       } else {
         this.setState({
           validateEmail: "Invalid:This is not a valid email !",
@@ -55,7 +55,7 @@ export class Form extends React.Component {
     setTimeout(() => {
       if (this.state.inputValuePhone.match(/^\d{9}$/)) {
         this.setState({ validatePhone: "Valid" })
-        this.state.validationChecked.push('true')
+        this.state.validationChecked.push("true")
       } else {
         this.setState({
           validatePhone: "Invalid:only 9 digits with no spaces !",
@@ -69,46 +69,48 @@ export class Form extends React.Component {
     setTimeout(() => {
       if (this.state.inputValueTextarea.match(/^[\s\S]{5,100}$/)) {
         this.setState({ validateTextarea: "Valid" })
-        this.state.validationChecked.push('true')
+        this.state.validationChecked.push("true")
       } else {
         this.setState({
           validateTextarea: "Invalid:number of characters min = 5 max = 100 !",
         })
       }
     }, 0)
-  };
-sendMassage=(e)=>{
-  e.preventDefault()
-  this.state.validationChecked.length===4?alert(`
+  }
+  sendMassage = (e) => {
+    e.preventDefault()
+    this.state.validationChecked.length === 4
+      ? alert(`
   Message sent!
   name: ${this.state.inputValueName},
   email: ${this.state.inputValueEmail},
   phone: ${this.state.inputValuePhone},
   text : ${this.state.inputValueTextarea},
   refers to: ${this.state.buttonLabel}
-  `):alert(`no valid ${this.state.validationChecked}`);
-  this.clearInput()
-}
-displayLabel =(e)=>{
-  e.preventDefault()
-  this.setState({ buttonLabel: e.target.innerText })
-  e.target.classList.toggle('choice')
-}
-clearInput=()=>{
-  this.setState({ inputValueName: '' });
-  this.setState({validateName: ""})
-  this.setState({validateEmail: ""})
-  this.setState({validatePhone: ""})
-  this.setState({validateTextarea: ""})
-  this.setState({inputValueEmail: ""})
-  this.setState({inputValuePhone: ""})
-  this.setState({inputValueTextarea:""})
-  this.setState({validationChecked:new Array(0)})
-  this.setState({buttonLabel:''})
-  document.querySelectorAll('.form-button button').forEach(el=>{
-    el.classList.remove('choice')
-  })
-}
+  `)
+      : alert(`no valid ${this.state.validationChecked}`)
+    this.clearInput()
+  }
+  displayLabel = (e) => {
+    e.preventDefault()
+    this.setState({ buttonLabel: e.target.innerText })
+    e.target.classList.toggle("choice")
+  }
+  clearInput = () => {
+    this.setState({ inputValueName: "" })
+    this.setState({ validateName: "" })
+    this.setState({ validateEmail: "" })
+    this.setState({ validatePhone: "" })
+    this.setState({ validateTextarea: "" })
+    this.setState({ inputValueEmail: "" })
+    this.setState({ inputValuePhone: "" })
+    this.setState({ inputValueTextarea: "" })
+    this.setState({ validationChecked: new Array(0) })
+    this.setState({ buttonLabel: "" })
+    document.querySelectorAll(".form-button button").forEach((el) => {
+      el.classList.remove("choice")
+    })
+  }
   render() {
     return (
       <form className="form">
@@ -179,12 +181,13 @@ clearInput=()=>{
               label={"Message"}
               style={{ paddingLeft: "1rem" }}
             />
-            <Textarea 
-             onChange={this.InputTextarea}
-             value={this.state.inputValueTextarea}
-            cols={"20"} 
-            rows={"8"} />
-             <Alert
+            <Textarea
+              onChange={this.InputTextarea}
+              value={this.state.inputValueTextarea}
+              cols={"20"}
+              rows={"8"}
+            />
+            <Alert
               error={this.state.validateTextarea}
               style={
                 this.state.validateTextarea === "Valid"
@@ -193,29 +196,16 @@ clearInput=()=>{
               }
             />
           </div>
-         
         </div>
-        
+
         <div className="form-wrapper">
           <Label id={"name"} label={"Services"} />
         </div>
         <div className="form-button">
-          <Button 
-          label={"Web Design"} 
-          onClick={this.displayLabel}
-          />
-          <Button 
-          label={"Web Development"} 
-          onClick={this.displayLabel}
-          />
-          <Button 
-          label={"Logo Design"} 
-          onClick={this.displayLabel}
-          />
-          <Button 
-          label={"Other"} 
-          onClick={this.displayLabel}
-          />
+          <Button label={"Web Design"} onClick={this.displayLabel} />
+          <Button label={"Web Development"} onClick={this.displayLabel} />
+          <Button label={"Logo Design"} onClick={this.displayLabel} />
+          <Button label={"Other"} onClick={this.displayLabel} />
         </div>
         <div className="form-message">
           <Button

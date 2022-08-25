@@ -1,4 +1,4 @@
-import "./textarea.css";
+import "./textarea.css"
 export function Textarea(props) {
   return (
     <div className="textarea-container">
@@ -13,4 +13,4 @@ export function Textarea(props) {
     </div>
   );
 }
-export default Textarea;
+export default Textarea

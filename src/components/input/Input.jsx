@@ -1,4 +1,4 @@
-import "./input.css";
+import "./input.css"
 export function Input(props) {
   return (
     <div className="input-container">
@@ -11,6 +11,6 @@ export function Input(props) {
         placeholder={props.placeholder}
       />
     </div>
-  );
+  )
 }
-export default Input;
+export default Input

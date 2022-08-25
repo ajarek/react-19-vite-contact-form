@@ -1,23 +1,31 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.row{
+.row {
   width: 600px;
   display: flex;
   justify-content: space-evenly;
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
-.element{
+.element {
   padding: 0.3rem 1rem;
   border-radius: 8px;
   cursor: pointer;
 }
-.element:hover{
+.element:hover {
   background-color: #fa949d;
-
+}
+@media screen and (max-width: 600px) {
+  #root {
+    margin-top: 1rem;
+  }
+  .row {
+    width: 100vw;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
 }
